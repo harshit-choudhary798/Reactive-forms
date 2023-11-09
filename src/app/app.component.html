@@ -50,10 +50,17 @@
         <label for="studentId">Student ID</label>
         <input type="text" id="studentId" class="styled-input" placeholder="Enter your student ID" formControlName="studentId">
       
+        <div >
+          
+        </div>
+        <p class="error" *ngIf="form.get('studentId')?.pending">Checking For Uniqueness......</p>
         <div *ngIf="form.get('studentId')?.touched && !form.get('studentId')?.valid">
+          
           <p class="error" *ngIf="form.get('studentId')?.errors?.['required']">Student ID is required</p>
+          <p class="error" *ngIf="form.get('studentId')?.errors?.['UniqueId']">Student ID should be Unique</p>
         </div>
       </div>
+      
       
   </div>
 
@@ -128,7 +135,8 @@
     </div>
     
 
-    <span class="add-more-symbol" style="cursor: pointer; font-weight: 900; font-size: 20px;">+</span>
+    <span class="add-more-symbol" style="cursor: pointer; font-weight: 900; font-size: 24px; color: black; text-shadow: 1px 1px 1px #000;">+</span>
+
   </div>
 
 

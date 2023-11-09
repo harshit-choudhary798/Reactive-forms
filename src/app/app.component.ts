@@ -17,7 +17,7 @@ export class AppComponent {
     lastname: new FormControl('', [Validators.required]),
     middlename: new FormControl('', [Validators.required]),
     dob: new FormControl('', [Validators.required, CustomValidator.checkDob]),
-    studentId: new FormControl('', [Validators.required]),
+    studentId: new FormControl('', [Validators.required],[CustomValidator.UniqueId]),
     address: new FormControl('', [Validators.required]),
     country: new FormControl('', [Validators.required]),
     city: new FormControl('', [Validators.required,CustomValidator.noNumbers]),

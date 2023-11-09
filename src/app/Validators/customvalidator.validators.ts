@@ -22,5 +22,17 @@ export class CustomValidator {
  
     return null;
   }
+
+  static UniqueId(control: AbstractControl): Promise<ValidationErrors | null> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === "123") {
+          resolve({ UniqueId: true });
+        } else {
+          resolve(null);
+        }
+      }, 3000); // Simulating a delay of 1 second
+    });
+  }
   
 }
