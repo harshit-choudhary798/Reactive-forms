@@ -1,54 +1,74 @@
 
 <div class="main-container">
   <h2 style="text-align: center; margin-bottom: 70px; color: rgb(201, 41, 41);">Student Registration Form</h2>
-<form >
+<form [formGroup]="form">
   <h3>Personal Details</h3>
   <div class="names">
+
+<div class="input-group">
+  <label for="firstName">First Name *</label>
+  <input type="text" id="firstName" class="styled-input" placeholder="Enter your first name" formControlName="firstname">
+
+  <div *ngIf="form.get('firstname')?.touched && !form.get('firstname')?.valid">
+    <p class="error" *ngIf="form.get('firstname')?.errors?.['required']">First name is required</p>
+  </div>
+</div>
+
     
+
     <div class="input-group">
-      <label for="firstName">First Name *</label>
-      <input type="text" id="firstName" class="styled-input" placeholder="Enter your first name">
-      <p class="error">Error message</p>
+      <label for="middleName">Middle Name</label>
+      <input type="text" id="middleName" class="styled-input" placeholder="Enter your middle name" formControlName="middlename">
       
     </div>
 
     <div class="input-group">
-      <label for="middleName">Middle Name</label>
-      <input type="text" id="middleName" class="styled-input" placeholder="Enter your middle name">
-      <p class="error">Error message</p>
-    </div>
-
-    <div class="input-group">
       <label for="lastName">Last Name *</label>
-      <input type="text" id="lastName" class="styled-input" placeholder="Enter your last name">
-      <p class="error">Error message</p>
+      <input type="text" id="lastName" class="styled-input" placeholder="Enter your last name" formControlName="lastname">
+      
+      <div *ngIf="form.get('lastname')?.touched && !form.get('lastname')?.valid">
+        <p class="error" *ngIf="form.get('lastname')?.errors?.['required']">Last name is required</p>
+      </div>
     </div>
   </div>
 
-
   <div class="section2">
-    <div class="input-group">
-      <label for="dob">Date of Birth</label>
-      <input type="date" id="dob" class="styled-input">
-      <p class="error">Error message</p>
-    </div>
+    
+      <div class="input-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" class="styled-input" formControlName="dob">
+    
+        <div *ngIf="form.get('dob')?.touched && !form.get('dob')?.valid">
+          <p class="error" *ngIf="form.get('dob')?.errors?.['required']">Date of Birth is required</p>
+        </div>
+      </div>
+   
+    
 
-    <div class="input-group">
-      <label for="studentId">Student ID</label>
-      <input type="text" id="studentId" class="styled-input" placeholder="Enter your student ID">
-      <p class="error">Error message</p>
-    </div>
+      <div class="input-group">
+        <label for="studentId">Student ID</label>
+        <input type="text" id="studentId" class="styled-input" placeholder="Enter your student ID" formControlName="studentId">
+      
+        <div *ngIf="form.get('studentId')?.touched && !form.get('studentId')?.valid">
+          <p class="error" *ngIf="form.get('studentId')?.errors?.['required']">Student ID is required</p>
+        </div>
+      </div>
+      
   </div>
 
 
   <h3>Address Details</h3>
   <div class="names">
+
     <div class="input-group">
       <label for="address">Address *</label>
-      <input type="text" id="address" class="styled-input" placeholder="Enter your address">
-      
-      <p class="error">Error message</p>
+      <input type="text" id="address" class="styled-input" placeholder="Enter your address" formControlName="address">
+    
+      <div *ngIf="form.get('address')?.touched && !form.get('address')?.valid">
+        <p class="error" *ngIf="form.get('address')?.errors?.['required']">Address is required</p>
+      </div>
     </div>
+    
 
     <div class="input-group">
       <label for="country">Country</label>
@@ -56,11 +76,15 @@
       <p class="error">Error message</p>
     </div>
 
-    <div class="input-group">
-      <label for="city">City *</label>
-      <input type="text" id="city" class="styled-input" placeholder="Enter your city">
-      <p class="error">Error message</p>
-    </div>
+<div class="input-group">
+  <label for="city">City *</label>
+  <input type="text" id="city" class="styled-input" placeholder="Enter your city" formControlName="city">
+
+  <div *ngIf="form.get('city')?.touched && !form.get('city')?.valid">
+    <p class="error" *ngIf="form.get('city')?.errors?.['required']">City is required</p>
+  </div>
+</div>
+
     <span class="add-more-symbol" style="cursor: pointer; font-weight: 900; font-size: 20px;">+</span>
   </div>
 
