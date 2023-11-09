@@ -20,8 +20,17 @@ export class AppComponent {
     country: new FormControl('', [Validators.required]),
     city: new FormControl('', [Validators.required]),
     branch: new FormControl('', [Validators.required]),
-    courses: new FormControl('', [Validators.required]),
+    course: new FormControl('', [Validators.required]),
     terms: new FormControl('', [Validators.required]),
 
   });
+
+
+  onSubmit(f: any) {
+    if (!f.valid) {
+      f.markAllAsTouched();
+    }
+  }
+  
+
 }

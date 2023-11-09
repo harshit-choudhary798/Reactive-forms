@@ -1,7 +1,7 @@
 
 <div class="main-container">
   <h2 style="text-align: center; margin-bottom: 70px; color: rgb(201, 41, 41);">Student Registration Form</h2>
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
   <h3>Personal Details</h3>
   <div class="names">
 
@@ -73,7 +73,7 @@
     <div class="input-group">
       <label for="country">Country</label>
       <input type="text" id="country" class="styled-input" placeholder="Enter your country">
-      <p class="error">Error message</p>
+      
     </div>
 
 <div class="input-group">
@@ -93,29 +93,36 @@
   <div class="row-input-group">
     <div class="input-group">
       <label for="branch">Branch *</label>
-      <select id="branch" class="styled-input">
+      <select id="branch" class="styled-input" formControlName="branch">
         <option value="">Select Branch</option>
         <option value="cse">Computer Science Engineering (CSE)</option>
         <option value="it">Information Technology (IT)</option>
         <option value="mechanical">Mechanical Engineering</option>
-        <!-- Add more options as needed -->
+        
       </select>
-      <p class="error">Error message</p>
+    
+      <div *ngIf="form.get('branch')?.touched && !form.get('branch')?.valid">
+        <p class="error" *ngIf="form.get('branch')?.errors?.['required']">Branch is required</p>
+      </div>
     </div>
+    
 
     <div class="input-group">
       <label for="course">Course *</label>
-      <select id="course" class="styled-input">
+      <select id="course" class="styled-input" formControlName="course">
         <option value="">Select Course</option>
         <option value="mtech">M.Tech</option>
         <option value="btech">B.Tech</option>
         <option value="bcom">B.Com</option>
         <option value="bsc">B.Sc</option>
         <option value="msc">M.Sc</option>
-        <!-- Add more options as needed -->
       </select>
-      <p class="error">Error message</p>
+    
+      <div *ngIf="form.get('course')?.touched && !form.get('course')?.valid">
+        <p class="error" *ngIf="form.get('course')?.errors?.['required']">Course is required</p>
+      </div>
     </div>
+    
   </div>
 
 
@@ -124,10 +131,15 @@
 
     <div class="input-group" style="margin-top: 30px;">
       <label>
-        <input type="checkbox" id="termsCheckbox">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente architecto porro pariatur doloremque esse eum autem obcaecati hic voluptate quia.
+        <input type="checkbox" id="termsCheckbox" formControlName="termsCheckbox">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente architecto porro pariatur doloremque esse eum autem obcaecati hic voluptate quia.
       </label>
-      <p class="error">Error message</p>
+    
+      <div *ngIf="form.get('termsCheckbox')?.touched && !form.get('termsCheckbox')?.valid">
+        <p class="error" *ngIf="form.get('termsCheckbox')?.errors?.['required']">You must agree to the terms</p>
+      </div>
     </div>
+    
   
 
 
