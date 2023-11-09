@@ -1,0 +1,95 @@
+
+.main-container{
+    padding: 40px 40px;
+    width: 80%;
+    margin: 10px auto;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: white;
+}
+
+.names {
+    display: flex;
+    
+    justify-content: space-around;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .styled-input {
+    margin-right: 40px;
+    width: 100%;
+    padding: 10px;
+    font-size: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  
+
+  
+.section2 {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .input-group {
+    flex: 1;
+    margin-right: 15px; 
+  }
+  
+  .styled-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+  
+  
+  .styled-input:focus {
+    outline: none;
+    
+  }
+  
+  
+.row-input-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .row-input-group .input-group {
+    flex: 1;
+    margin-right: 15px; 
+  }
+  
+  
+.submit-button {
+    background-color: rgb(23, 23, 104);
+    color: #fff; 
+    padding: 15px 30px; 
+    font-size: 18px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  .submit-button:hover {
+    background-color: rgb(14, 14, 52);
+  }
+  
