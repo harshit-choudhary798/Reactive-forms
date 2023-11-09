@@ -93,3 +93,15 @@
     background-color: rgb(14, 14, 52);
   }
   
+  /* .radio-group{
+    position: relative;
+    top: 15px;
+  } */
+  input[radio]{
+    margin-top: 17px !important;
+  }
+
+  .emailandgender{
+    display: flex !important;
+    align-items: center !important;
+  }

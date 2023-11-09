@@ -40,6 +40,7 @@
     
         <div *ngIf="form.get('dob')?.touched && !form.get('dob')?.valid">
           <p class="error" *ngIf="form.get('dob')?.errors?.['required']">Date of Birth is required</p>
+          <p class="error" *ngIf="form.get('dob')?.errors?.['checkDob']">Enter valid DOB</p>
         </div>
       </div>
    
@@ -55,6 +56,46 @@
       </div>
       
   </div>
+
+
+  <div class="input-group">
+    <div class="row-input-group emailandgender">
+      
+
+      <div class="input-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" class="styled-input" placeholder="Enter your email" formControlName="email">
+      
+        <div *ngIf="form.get('email')?.touched && !form.get('email')?.valid">
+          <p class="error" *ngIf="form.get('email')?.errors?.['required']">Email is required</p>
+          <p class="error" *ngIf="form.get('email')?.errors?.['email']">Enter a valid email address</p>
+          
+        </div>
+      </div>
+      
+  
+      
+      <div class="input-group">
+        <label>Gender *</label>
+        <div class="radio-group">
+          <input type="radio" id="male" name="gender" value="male" formControlName="gender">
+          <label for="male">Male</label>
+  
+          <input type="radio" id="female" name="gender" value="female" formControlName="gender">
+          <label for="female">Female</label>
+  
+          <input type="radio" id="other" name="gender" value="other" formControlName="gender">
+          <label for="other">Other</label>
+        </div>
+  
+        <div *ngIf="form.get('gender')?.touched && !form.get('gender')?.valid">
+          <p class="error" *ngIf="form.get('gender')?.errors?.['required']">Gender is required</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
 
 
   <h3>Address Details</h3>
@@ -76,14 +117,16 @@
       
     </div>
 
-<div class="input-group">
-  <label for="city">City *</label>
-  <input type="text" id="city" class="styled-input" placeholder="Enter your city" formControlName="city">
-
-  <div *ngIf="form.get('city')?.touched && !form.get('city')?.valid">
-    <p class="error" *ngIf="form.get('city')?.errors?.['required']">City is required</p>
-  </div>
-</div>
+    <div class="input-group">
+      <label for="city">City *</label>
+      <input type="text" id="city" class="styled-input" placeholder="Enter your city" formControlName="city">
+    
+      <div *ngIf="form.get('city')?.touched && !form.get('city')?.valid">
+        <p class="error" *ngIf="form.get('city')?.errors?.['required']">City is required</p>
+        <p class="error" *ngIf="form.get('city')?.errors?.['noNumbers']">City cannot contain numbers</p>
+      </div>
+    </div>
+    
 
     <span class="add-more-symbol" style="cursor: pointer; font-weight: 900; font-size: 20px;">+</span>
   </div>
