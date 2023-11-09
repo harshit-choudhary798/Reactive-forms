@@ -199,3 +199,14 @@
 </form>
 
 </div>
+
+
+
+<table class="styled-table">
+  <tr>
+    <th *ngFor="let controlName of form.controls | keyvalue">{{ controlName.key }}</th>
+  </tr>
+  <tr>
+    <td *ngFor="let control of form.controls | keyvalue">{{ form.get(control.key)?.value }}</td>
+  </tr>
+</table>

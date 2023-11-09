@@ -14,9 +14,13 @@ export class CustomValidator {
   }
 
   static noNumbers(control: AbstractControl): ValidationErrors | null {
-    if (isNaN(Number(control.value))) {
-      return { noNumbers: true };
+    if(control.value!=''){
+        if (!isNaN(Number(control.value))) {
+            return { noNumbers: true };
+          }
     }
+ 
     return null;
   }
+  
 }

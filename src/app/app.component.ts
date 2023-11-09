@@ -26,6 +26,7 @@ export class AppComponent {
     terms: new FormControl('', [Validators.required]),
     gender: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
+    termsCheckbox: new FormControl(false, [Validators.required, Validators.pattern('true')]),
   });
   onSubmit(form:any) {
     if (form.invalid) {
